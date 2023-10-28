@@ -11,24 +11,21 @@ namespace PMPHF006_JQ8Z8Z
     {
         static void Main(string[] args)
         {
-            char[] numbers = Console.ReadLine().Replace(",", "").ToCharArray();
+            char[] numbers = Console.ReadLine().Replace(",","").ToCharArray();
             int steps = 0;
-            int count = 0;
+            int ones = 0;
             int zeros = 0;
             for(int i =  0; i < numbers.Length; i++)
             {
-                if (numbers[i] == '1') count++;
+                if (numbers[i] == '1') ones++;
             }
 
-            for(int i = numbers.Length-1; i > numbers.Length-1-count; i--)
+            for(int i = numbers.Length-1; i > numbers.Length-1-ones; i--)
             {
-                if (numbers[i] == '0')
-                {
-                    zeros++;
-                }
+                if (numbers[i] == '0') zeros++;
             }
 
-            int j = 0;
+            int j = 0; // rendezés
             while(steps != zeros)
             {
                 if (numbers[j]=='1')
